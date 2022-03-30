@@ -15,15 +15,15 @@
         android:layout_height="69dp"
         app:srcCompat="@drawable/top_bar" />
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="324dp"
-        android:layout_height="107dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        app:srcCompat="@drawable/title" />
+  <ImageView
+    android:id="@+id/Register_title"
+    android:layout_width="324dp"
+    android:layout_height="107dp"
+    android:layout_gravity="center"
+    android:layout_marginTop="50dp"
+    app:srcCompat="@drawable/title" />
 
-    <androidx.cardview.widget.CardView
+  <androidx.cardview.widget.CardView
         android:layout_width="350dp"
         android:layout_height="275dp"
         android:layout_gravity="center"
@@ -47,7 +47,7 @@
                 android:textSize="34sp" />
 
             <TextView
-                android:id="@+id/email_tv"
+                android:id="@+id/App_Name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
@@ -60,7 +60,7 @@
                 android:textSize="34sp" />
 
             <EditText
-                android:id="@+id/email_txt"
+                android:id="@+id/app_name__txt"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="15dp"
@@ -73,7 +73,7 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
-                android:id="@+id/pass_tv"
+                android:id="@+id/type_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
@@ -86,7 +86,7 @@
                 android:textSize="34sp" />
 
             <EditText
-                android:id="@+id/pass_txt"
+                android:id="@+id/type_txt"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="15dp"
@@ -119,7 +119,7 @@
             android:textSize="34sp" />
 
         <Button
-            android:id="@+id/enter_btn"
+            android:id="@+id/Enter_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
