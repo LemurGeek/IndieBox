@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IndieBox">
         <activity
+            android:name=".GamesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AppsActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
