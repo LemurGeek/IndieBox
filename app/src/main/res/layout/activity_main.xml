@@ -9,7 +9,14 @@
     android:background="@color/eerie_black"
     >
 
-    <ImageView
+  <ProgressBar
+    android:id="@+id/progressBar"
+    style="?android:attr/progressBarStyleHorizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"/>
+
+  <ImageView
         android:id="@+id/topbar"
         android:layout_width="wrap_content"
         android:layout_height="69dp"
@@ -60,7 +67,7 @@
                 android:textSize="34sp" />
 
             <EditText
-                android:id="@+id/app_name__txt"
+                android:id="@+id/txtUser"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="15dp"
@@ -86,7 +93,7 @@
                 android:textSize="34sp" />
 
             <EditText
-                android:id="@+id/type_txt"
+                android:id="@+id/txtPass"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="15dp"

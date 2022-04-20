@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "205126911603",
+    "project_id": "indiebox-7cc0f",
+    "storage_bucket": "indiebox-7cc0f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205126911603:android:7c1d83255a11e3e35fcc06",
+        "android_client_info": {
+          "package_name": "com.example.indiebox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205126911603-6inprlijmj1rmcdcg3u7v6gjr1g7d8a6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcCQSACnMvQ0JvjTsVkQu2GCixnEqkw1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "205126911603-6inprlijmj1rmcdcg3u7v6gjr1g7d8a6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

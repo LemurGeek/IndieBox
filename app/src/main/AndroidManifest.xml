@@ -13,7 +13,6 @@
             android:name=".GamesActivity"
             android:exported="false" />
         <activity
-            android:name=".AppsActivity"
             android:name=".Register_New_App"
             android:exported="false" />
         <activity
