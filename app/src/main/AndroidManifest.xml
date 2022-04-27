@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IndieBox">
         <activity
-            android:name=".GamesActivity"
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".Register_New_App"
+            android:name=".GamesActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

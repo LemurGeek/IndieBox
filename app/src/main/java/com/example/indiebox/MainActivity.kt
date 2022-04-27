@@ -4,64 +4,78 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
 import android.widget.Toast
+import com.example.indiebox.databinding.ActivityMainBinding
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
-
-  private lateinit var txtUser: EditText
-  private lateinit var txtPassword: EditText
-  private lateinit var auth: FirebaseAuth
+    private lateinit var auth: FirebaseAuth
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
-      setContentView(R.layout.activity_main)
-      var Boton1 = findViewById<Button>(R.id.Enter_btn)
+      binding = ActivityMainBinding.inflate(layoutInflater)
+      setContentView(binding.root)
+      FirebaseApp.initializeApp(this)
 
-      Boton1.setOnClickListener(){
-        singIn()
-      }
+      auth = Firebase.auth
 
-      txtUser=findViewById(R.id.txtUser)
-      txtPassword=findViewById(R.id.txtPass)
-      auth= FirebaseAuth.getInstance()
-
-
+      binding.createBtn.setOnClickListener { registerUser() }
+      binding.enterBtn.setOnClickListener { loginUser() }
     }
 
+    private fun loginUser(){
+      val email = binding.emailTxt.text.toString()
+      val pass = binding.passTxt.text.toString()
 
+      if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(pass)){
+        auth.signInWithEmailAndPassword(email,pass)
+          .addOnCompleteListener(this) { task ->
+            if (task.isSuccessful) {
+              val user = auth.currentUser
+              updateUser(user)
+            } else {
+              Toast.makeText(baseContext,"Fallo login",
+                Toast.LENGTH_SHORT).show()
+              updateUser(null)
+            }
+          }
+      }
+    }
 
+  private fun registerUser() {
+    val email = binding.emailTxt.text.toString()
+    val pass = binding.passTxt.text.toString()
 
-
-fun singIn(){
-  loginUser()
-}
-
-private fun loginUser(){
-  val user:String=txtUser.text.toString()
-  val password:String=txtPassword.text.toString()
-
-  if(!TextUtils.isEmpty(user) && !TextUtils.isEmpty(password)){
-
-    auth.signInWithEmailAndPassword(user, password)
-      .addOnCompleteListener(this){
-          task ->
-
-        if(task.isSuccessful){
-          action()
-        }else{
-          Toast.makeText(this,"Error de credenciales", Toast.LENGTH_LONG).show()
+    auth.createUserWithEmailAndPassword(email,pass)
+      .addOnCompleteListener(this) { task ->
+        if (task.isSuccessful) {
+          val user = auth.currentUser
+          updateUser(user)
+        } else {
+          Toast.makeText(baseContext,
+            "Fallo registro",
+            Toast.LENGTH_SHORT).show()
+          updateUser(null)
         }
       }
   }
 
-}
-private fun action(){
-  startActivity(Intent(this,GamesActivity::class.java))
-}
+    private fun updateUser(user: FirebaseUser?) {
+      if (user!=null) {
+        val intent = Intent(this,RegisterActivity::class.java)
+        startActivity(intent)
+      }
+    }
+
+    public override fun onStart() {
+      super.onStart()
+      val user = auth.currentUser
+      updateUser(user)
+    }
 }
 

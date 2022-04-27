@@ -7,4 +7,14 @@
     <string name="login_create">Create</string>
     <string name="games_title">Games</string>
     <string name="apps_title">Apps</string>
+
+    <string name="register_app_title">Register New App</string>
+    <string name="application_name">App Name</string>
+    <string name="type">Type</string>
+    <string name="type_game">Game</string>
+    <string name="type_app">App</string>
+    <string name="platform">Platform</string>
+    <string name="description">Short Description</string>
+    <string name="register_app_create_btn">Create</string>
+
 </resources>

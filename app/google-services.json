@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "205126911603",
-    "project_id": "indiebox-7cc0f",
-    "storage_bucket": "indiebox-7cc0f.appspot.com"
+    "project_number": "1042961405084",
+    "project_id": "indiebox-1dfb9",
+    "storage_bucket": "indiebox-1dfb9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:205126911603:android:7c1d83255a11e3e35fcc06",
+        "mobilesdk_app_id": "1:1042961405084:android:ebc452a137b16c426f4959",
         "android_client_info": {
           "package_name": "com.example.indiebox"
         }
       },
       "oauth_client": [
         {
-          "client_id": "205126911603-6inprlijmj1rmcdcg3u7v6gjr1g7d8a6.apps.googleusercontent.com",
+          "client_id": "1042961405084-aak3eq94brv9cqhgeat5efnen2t8dk4h.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBcCQSACnMvQ0JvjTsVkQu2GCixnEqkw1g"
+          "current_key": "AIzaSyC1ewy61EJaUaf8WsULTaNxNhKZlZeMh4g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "205126911603-6inprlijmj1rmcdcg3u7v6gjr1g7d8a6.apps.googleusercontent.com",
+              "client_id": "1042961405084-aak3eq94brv9cqhgeat5efnen2t8dk4h.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
