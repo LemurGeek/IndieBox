@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@color/eerie_black"
+    android:background="@drawable/gradient_list"
+    android:id="@+id/mainLayout"
     >
 
   <ProgressBar

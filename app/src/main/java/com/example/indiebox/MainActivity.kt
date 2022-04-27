@@ -1,6 +1,7 @@
 package com.example.indiebox
 
 import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
       FirebaseApp.initializeApp(this)
 
       auth = Firebase.auth
-
+      setAnimatedBackground()
       binding.createBtn.setOnClickListener { registerUser() }
       binding.enterBtn.setOnClickListener { loginUser() }
     }
@@ -65,9 +66,18 @@ class MainActivity : AppCompatActivity() {
       }
   }
 
+
+  fun setAnimatedBackground(){
+    var animation = AnimationDrawable()
+    animation = binding.mainLayout.background as AnimationDrawable
+    animation.setEnterFadeDuration(2500)
+    animation.setExitFadeDuration(5000)
+    animation.start()
+  }
+
     private fun updateUser(user: FirebaseUser?) {
       if (user!=null) {
-        val intent = Intent(this,RegisterActivity::class.java)
+        val intent = Intent(this,MainMenu::class.java)
         startActivity(intent)
       }
     }

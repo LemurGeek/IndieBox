@@ -1,5 +1,6 @@
 package com.example.indiebox
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RadioButton
@@ -53,6 +54,8 @@ class RegisterActivity : AppCompatActivity() {
                 item.put("id", document.id)
                 db.collection(type).document(document.id).set(item).addOnSuccessListener {
                     void: Void? -> Toast.makeText(baseContext, "Successfully created new " + type + ".", Toast.LENGTH_LONG).show();
+                    val intent = Intent(this,MainMenu::class.java)
+                    startActivity(intent)
                 }.addOnFailureListener {
                     exception: java.lang.Exception -> Toast.makeText(baseContext, exception.toString(), Toast.LENGTH_LONG).show();
                 }
