@@ -59,7 +59,7 @@ class AppsActivity : AppCompatActivity() {
                 for (document in result) {
                     binding.pbLoading.visibility = View.INVISIBLE
                     binding.swipe.isRefreshing = false
-                    CreateAppCardView(document.data["name"].toString(),document.data["description"].toString(),document.data["platform"].toString())
+                    CreateAppCardView(document.data["name"].toString(),document.data["description"].toString(),document.data["platform"].toString(),document.data["user"].toString())
                 }
             }
             .addOnFailureListener { exception ->
@@ -68,7 +68,7 @@ class AppsActivity : AppCompatActivity() {
 
     }
 
-     fun CreateAppCardView(appName: String,appDescription: String,platform: String){
+     fun CreateAppCardView(appName: String,appDescription: String,platform: String,user: String){
 
 
          var params = LinearLayout.LayoutParams(
@@ -128,9 +128,18 @@ class AppsActivity : AppCompatActivity() {
          platformTxt.setTextColor(Color.BLACK)
          platformTxt.setTypeface(Typeface.SANS_SERIF,Typeface.BOLD)
 
+         val userTxt = TextView(this)
+
+         userTxt.text = "   Owner: $user"
+         userTxt.textAlignment = TextView.TEXT_ALIGNMENT_VIEW_END
+         userTxt.textSize = 12f
+         userTxt.setTextColor(Color.BLACK)
+         userTxt.setTypeface(Typeface.SANS_SERIF,Typeface.BOLD)
+
          containerLayout.addView(gameName)
          containerLayout.addView(descriptionTxt)
          containerLayoutDetails.addView(platformTxt)
+         containerLayoutDetails.addView(userTxt)
          containerLayout.addView(containerLayoutDetails)
          cardView.addView(containerLayout)
 
